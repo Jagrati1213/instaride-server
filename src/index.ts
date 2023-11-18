@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import express, { Application } from "express";
+import express, { Application, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import { Server } from "http";
 import { connection_with_mongodb } from "./mongodbs/connection";
@@ -24,6 +24,12 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded());
 
+// route
+app.get("/", (req: Request, res: Response, next: NextFunction) => {
+  res.send({
+    msg: "welcome in backend",
+  });
+});
 // server
 const server: Server = app.listen(port, () => {
   console.log("server started at Port ", port);
