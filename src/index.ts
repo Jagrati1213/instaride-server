@@ -27,7 +27,7 @@ app.use(express.urlencoded());
 // route
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   res.send({
-    msg: "welcome in backend",
+    msg: "welcome in Backend of InstaRide",
   });
 });
 // server
